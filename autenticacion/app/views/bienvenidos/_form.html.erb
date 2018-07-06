@@ -1,0 +1,27 @@
+<%= form_for(bienvenido) do |f| %>
+  <% if bienvenido.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bienvenido.errors.count, "error") %> prohibited this bienvenido from being saved:</h2>
+
+      <ul>
+      <% bienvenido.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :usuario %>
+    <%= f.text_area :usuario %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
